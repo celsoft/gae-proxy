@@ -27,8 +27,8 @@ class MainHandler(webapp2.RequestHandler):
     def get(self):
         url = self.request.get('url')
         callback = self.request.get('callback', None)
-        if not url.startswith('http://'):
-            url = 'http://%s' % url
+        if not url.startswith('https://'):
+            url = 'https://%s' % url
 
         content = memcache.get(url)
         headers = memcache.get('%s:headers' % url)
