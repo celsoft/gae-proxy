@@ -40,7 +40,7 @@ class MainHandler(webapp2.RequestHandler):
             logging.info('cache miss')
             result = urlfetch.fetch(url, deadline=60)
             if result.status_code != 200:
-                result.content = 'Cannot fetch %s' % url
+                result.content = 'CannoT fetch %s' % url
 
             self.generate_response(result.content, result.headers, result.status_code, callback)
 
